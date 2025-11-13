@@ -1,6 +1,6 @@
 # goreutils
 
-A tiny collection minimal of coreutils written in Go.
+A tiny collection of minimal coreutils written in Go.
 
 ## Usage
 
