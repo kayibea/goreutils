@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+export _GOREUTILS_OLD_PATH="$PATH"
+export _GOREUTILS_OLD_PS1="$PS1"
+
+deactivate() {
+  export PATH="$_GOREUTILS_OLD_PATH"
+  export PS1="$_GOREUTILS_OLD_PS1"
+  unset _GOREUTILS_OLD_PATH
+  unset _GOREUTILS_OLD_PS1
+  unalias exit
+}
+
+export PATH="$(pwd)/bin:$PATH"
+export PS1="(goreutils) $PS1"
+
+alias exit='deactivate'
+
+echo "goreutils environment activated"
+echo "Type 'exit' to deactivate"
